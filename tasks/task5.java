@@ -11,51 +11,23 @@ import java.util.Map;
 
 public class task5 {
     public static void main(String[] args) throws NoSuchAlgorithmException{
-        System.out.println("-----------№1-----------");
         System.out.println(encrypt("Hello"));
         System.out.println(decrypt(new int [] {72, 33, -73, 84, -12, -3, 13, -13, -68 }));
-        System.out.println(encrypt("Sunshine"));
-        System.out.println("-----------№2-----------");
         System.out.println(canMove("Rook", "A8", "H8"));
         System.out.println(canMove("Bishop", "A7", "G1"));
-        System.out.println(canMove("Queen", "C4", "D6"));
-        System.out.println("-----------№3-----------");
         System.out.println(canComplete("butl", "beautiful"));
         System.out.println(canComplete("butlz", "beautiful")); 
-        System.out.println(canComplete("tulb", "beautiful"));
-        System.out.println(canComplete("bbutl", "beautiful"));
-        System.out.println("-----------№4-----------");
         System.out.println(sumDigProd(16, 28));
-        System.out.println(sumDigProd(0));
-        System.out.println(sumDigProd(1, 2, 3, 4, 5, 6));
-        System.out.println("-----------№5-----------");
         System.out.println(sameVowelGroup(new String [] {"toe", "ocelot", "maniac"}));
-        System.out.println(sameVowelGroup(new String [] {"many", "carriage", "emit", "apricot", "animal"}));
-        System.out.println(sameVowelGroup(new String [] {"hoops", "chuff", "bot", "bottom"}));
-        System.out.println("-----------№6-----------");
         System.out.println(validateCard(1234567890123456L));
-        System.out.println(validateCard(1234567890123452L));  
-        System.out.println("-----------№7-----------");
         System.out.println(numToEng(0));
         System.out.println(numToEng(18)); 
-        System.out.println(numToEng(126)); 
-        System.out.println(numToEng(909)); 
         System.out.println(numToRus(0));
-        System.out.println(numToRus(18)); 
-        System.out.println(numToRus(126)); 
         System.out.println(numToRus(909)); 
-        System.out.println("-----------№8-----------");
         System.out.println(getSha256Hash("password123"));
         System.out.println(getSha256Hash("Fluffy@home"));
-        System.out.println(getSha256Hash("Hey dude!"));
-        System.out.println("-----------№9-----------");
         System.out.println(correctTitle("jOn SnoW, kINg IN thE noRth."));
-        System.out.println(correctTitle("sansa stark, lady of winterfell.")); 
-        System.out.println(correctTitle("TYRION LANNISTER, HAND OF THE QUEEN."));
-        System.out.println("-----------№10-----------");
-        System.out.println(hexLattice(1));
         System.out.println(hexLattice(7));
-        System.out.println(hexLattice(19));
         System.out.println(hexLattice(21));
     }
 
