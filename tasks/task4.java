@@ -5,12 +5,21 @@ import java.util.Collections;
 
 public class task4 {
     public static void main(String[] args){
-        System.out.println(text_procces(10,7, "hello my name is Bessie and this is my essay"));
+        System.out.println(text_procces(10, 7, "hello my name is Bessie and this is my essay"));
+        System.out.println(split("()()()"));
+        System.out.println(split("((()))(())()()(()())"));
         System.out.println(toCamelCase("hello_edabit"));
         System.out.println(toSnakeCase("helloEdabit"));
-        System.out.println(overTime(new double [] {13.25, 15, 30, 1.5}));
+        System.out.println(overTime(new double [] {9, 17, 30, 1.5}));
+        System.out.println(BMI("205 pounds", "73 inches"));
+        System.out.println(bugger(39));
+        System.out.println(toStarShorthand("abbccc"));
+        System.out.println(toStarShorthand("77777geff"));
+        System.out.println(doesRhyme("Sam I am!", "Green eggs and ham."));
+        System.out.println(doesRhyme("Sam I am!", "Green eggs and HAM."));
+        System.out.println(trouble(451999277, 41177722899L));
+        System.out.println(countUniqueBooks("AZYWABBCATTTA", 'A'));
     }
-
 
     public static String text_procces(int n, int k, String s){
         String []arr = s.split(" ");
