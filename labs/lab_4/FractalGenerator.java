@@ -1,29 +1,29 @@
 import java.awt.geom.Rectangle2D;
 
-
 /**
- * Этот класс предоставляет общий интерфейс и операции для fractal
-* generators, которые можно просмотреть в Fractal Explorer.
+ * This class provides the common interface and operations for fractal
+ * generators that can be viewed in the Fractal Explorer.
  */
 public abstract class FractalGenerator {
 
     /**
-     * Эта статическая вспомогательная функция принимает целочисленную координату и преобразует ее
-    * в значение двойной точности, соответствующее определенному диапазону. Он
-    * используется для преобразования координат пикселей в значения двойной точности для
-    * вычисление фракталов и т.д.
+     * This static helper function takes an integer coordinate and converts it
+     * into a double-precision value corresponding to a specific range. It is
+     * used to convert pixel coordinates into double-precision values for
+     * computing fractals, etc.
      *
      * @param rangeMin the minimum value of the floating-point range
      * @param rangeMax the maximum value of the floating-point range
      *
-     * @param size the size of the dimension that the pixel coordinate is from.
-     *        For example, this might be the image width, or the image height.
+     * @param size     the size of the dimension that the pixel coordinate is from.
+     *                 For example, this might be the image width, or the image
+     *                 height.
      *
-     * @param coord the coordinate to compute the double-precision value for.
-     *        The coordinate should fall in the range [0, size].
+     * @param coord    the coordinate to compute the double-precision value for.
+     *                 The coordinate should fall in the range [0, size].
      */
     public static double getCoord(double rangeMin, double rangeMax,
-        int size, int coord) {
+            int size, int coord) {
 
         assert size > 0;
         assert coord >= 0 && coord < size;
@@ -32,20 +32,18 @@ public abstract class FractalGenerator {
         return rangeMin + (range * (double) coord / (double) size);
     }
 
-
     /**
-     * Задает указанный прямоугольник, содержащий начальный диапазон, подходящий для
-    * генерируемого фрактала.
+     * Sets the specified rectangle to contain the initial range suitable for
+     * the fractal being generated.
      */
     public abstract void getInitialRange(Rectangle2D.Double range);
 
-
     /**
-     * Обновляет текущий диапазон, чтобы он был центрирован в указанных координатах
-    * и увеличивался или уменьшался на указанный коэффициент масштабирования.
+     * Updates the current range to be centered at the specified coordinates,
+     * and to be zoomed in or out by the specified scaling factor.
      */
     public void recenterAndZoomRange(Rectangle2D.Double range,
-        double centerX, double centerY, double scale) {
+            double centerX, double centerY, double scale) {
 
         double newWidth = range.width * scale;
         double newHeight = range.height * scale;
@@ -56,13 +54,12 @@ public abstract class FractalGenerator {
         range.height = newHeight;
     }
 
-
     /**
-     * Учитывая координату <em>x</em> + <em>iy</em> в комплексной плоскости,
-    * вычисляет и возвращает количество итераций до фрактала
-    * функция выходит за пределы ограничивающей области для этой точки. Указывается точка, которая
-    * не исчезает до достижения предела итерации
-    * с результатом -1.
+     * Given a coordinate <em>x</em> + <em>iy</em> in the complex plane,
+     * computes and returns the number of iterations before the fractal
+     * function escapes the bounding area for that point. A point that
+     * doesn't escape before the iteration limit is reached is indicated
+     * with a result of -1.
      */
     public abstract int numIterations(double x, double y);
 }
